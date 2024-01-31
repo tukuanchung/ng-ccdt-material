@@ -4,7 +4,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {provideNativeDateAdapter, DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE} from '@angular/material/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { JsonPipe } from '@angular/common';
+import { CommonModule, JsonPipe } from '@angular/common';
 import { MAT_MOMENT_DATE_ADAPTER_OPTIONS } from '@angular/material-moment-adapter';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { TaiwanDateAdapter } from './TaiwanDateAdapter';
@@ -38,6 +38,7 @@ import { TaiwanDateAdapter } from './TaiwanDateAdapter';
       }
     }],
     imports: [RouterOutlet, MatFormFieldModule,
+      CommonModule,
       TranslateModule,
       MatDatepickerModule, FormsModule, ReactiveFormsModule, JsonPipe],
   templateUrl: './app.component.html',
