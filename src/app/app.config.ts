@@ -7,9 +7,9 @@ import { HttpClient } from '@angular/common/http';
 import { provideHttpClient } from '@angular/common/http';
 import { DATE_PIPE_DEFAULT_OPTIONS, registerLocaleData } from '@angular/common';
 
-import localeName from '@angular/common/locales/zh-Hant';
-import localNameExtra from '@angular/common/locales/extra/zh-Hant';
-registerLocaleData(localeName, localNameExtra);
+// import localeName from '@angular/common/locales/zh-Hant';
+// import localNameExtra from '@angular/common/locales/extra/zh-Hant';
+// registerLocaleData(localeName, localNameExtra);
 
 
 
@@ -39,7 +39,7 @@ export const appConfig: ApplicationConfig = {
       })
     ),
     {provide: DATE_PIPE_DEFAULT_OPTIONS, useValue: {dateFormat: 'full'}},
-    {provide: LOCALE_ID,useValue: 'zh-Hant'},
+    // {provide: LOCALE_ID,useValue: 'zh-Hant'},
   ],
 
 };
