@@ -56,4 +56,19 @@ export class AppComponent {
   changeLang(lang: string) {
     this.translate.use(lang);
   }
+
+
+  ngOnInit(): void {
+
+    this.translate.get('SiteInfo.Title').subscribe((res: string) => {
+      this.title = res;
+    });
+
+    this.translate.onLangChange.subscribe((event) => {
+      this.translate.get('SiteInfo.Title').subscribe((res: string) => {
+        this.title = res;
+      });
+    });
+  }
+
 }
