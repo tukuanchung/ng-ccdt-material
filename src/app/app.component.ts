@@ -8,6 +8,7 @@ import { JsonPipe } from '@angular/common';
 import { MAT_MOMENT_DATE_ADAPTER_OPTIONS, MatMomentDateAdapterOptions, MomentDateAdapter } from '@angular/material-moment-adapter';
 import moment, { Moment } from 'moment';
 import twMoment from 'moment-taiwan';
+import { TranslateModule } from '@ngx-translate/core';
 
 export class TaiwanDateAdapter extends MomentDateAdapter {
 
@@ -57,11 +58,14 @@ export class TaiwanDateAdapter extends MomentDateAdapter {
         },
       }
     }],
-  imports: [ RouterOutlet, MatFormFieldModule, MatDatepickerModule, FormsModule, ReactiveFormsModule, JsonPipe],
+    imports: [RouterOutlet, MatFormFieldModule,
+      TranslateModule,
+      MatDatepickerModule, FormsModule, ReactiveFormsModule, JsonPipe],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
+  title = 'ng-ccdt-material'
   range = new FormGroup({
     start: new FormControl<Date | null>(null),
     end: new FormControl<Date | null>(null),
